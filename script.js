@@ -314,43 +314,6 @@
                 achievementsTab.appendChild(achievementElement);
             });
 
-        // ss
-        clickerBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            clickerBtn.classList.add('active');
-            
-            // Воспроизводим звук клика
-            const clickSound = document.getElementById('clickSound');
-            clickSound.currentTime = 0;
-            clickSound.play();
-        
-            cosmicEnergy += clickPower;
-            totalEnergy += clickPower;
-            totalClicks++;
-            checkAchievements();
-            updateUI();
-        });
-        
-        clickerBtn.addEventListener('touchend', () => {
-            clickerBtn.classList.remove('active');
-        });
-        
-        // Предотвращаем всплывающее меню при долгом нажатии
-        clickerBtn.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-        });
-                
-            // Обработчики событий для кнопок покупки
-            document.querySelectorAll('#generatorsTab .buy-btn').forEach(btn => {
-                btn.addEventListener('click', () => buyGenerator(btn.dataset.id));
-            });
-
-            document.querySelectorAll('#upgradesTab .buy-btn').forEach(btn => {
-                btn.addEventListener('click', () => buyUpgrade(btn.dataset.id));
-            });
-        }
-//sss
-
         function toggleMusic() {
             isMusicOn = !isMusicOn;
 
