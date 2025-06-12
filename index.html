@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Bloom</title>
+	<link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">  
+	<script src="script.js" defer></script>   
+</head>
+
+<audio id="buySound" preload="auto">
+    <source src="sounds/buy.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="errorSound" preload="auto">
+    <source src="sounds/error.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="clickSound" preload="auto">
+    <source src="sounds/click.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="achievementSound" preload="auto">
+    <source src="sounds/achievement.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="bgMusic" loop>
+    <source src="sounds/background.mp3" type="audio/mpeg">
+</audio>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <header>
+            <h1>Tap Bloom</h1>
+            <button id="musicToggle" class="music-btn">🔇</button>
+        </header>
+
+        <div class="main-content">
+            <section class="clicker-section">
+                <div class="clicker-display">
+                    <h2 class="cosmic-counter" id="cosmicEnergy">0</h2>
+                    <p class="cosmic-counter">Энергии</p>
+                </div>
+
+                <button class="clicker-btn" id="clickerBtn">
+                    <span>КЛИК!</span>
+                    <span class="click-power">+<span id="clickPower">1</span> за клик</span>
+                </button>
+
+                <div class="stats-section">
+                    <h3 class="stats-title">Статистика</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <p class="stat-name">Всего кликов</p>
+                            <p class="stat-value" id="totalClicks">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-name">Энергии в секунду</p>
+                            <p class="stat-value" id="energyPerSecond">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-name">Всего энергии</p>
+                            <p class="stat-value" id="totalEnergy">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <p class="stat-name">Уровень престижа</p>
+                            <p class="stat-value" id="prestigeLevel">0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prestige-section">
+                    <button class="prestige-btn" id="prestigeBtn" disabled>ПРЕСТИЖ (0/1e8)</button>
+                    <p class="prestige-info">Престиж сбросит ваш прогресс, но даст постоянные бонусы!</p>
+                </div>
+            </section>
+
+            <section class="shop-section">
+                <div class="shop-header">
+                    <h3 class="shop-title">Магазин</h3>
+                </div>
+
+            <div class="shop-tabs">
+                <button class="shop-tab active" data-tab="generators">Генераторы</button>
+                <button class="shop-tab" data-tab="upgrades">Улучшения</button>
+                <button class="shop-tab" data-tab="achievements">Достижения</button>
+            </div>
+
+                <div class="shop-items-container">
+                    <div class="shop-tab-content active" id="generatorsTab">
+                        <!-- Генераторы будут добавлены через JS -->
+                    </div>
+
+                    <div class="shop-tab-content" id="upgradesTab">
+                        <!-- Улучшения будут добавлены через JS -->
+                    </div>
+
+                    <div class="shop-tab-content" id="achievementsTab">
+                        <!-- Достижения будут добавлены через JS -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="achievement-notification" id="achievementNotification">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-text">
+            <h4 id="achievementTitle">Достижение получено!</h4>
+            <p id="achievementDesc">Описание достижения</p>
+        </div>
+    </div>
+</body>
+</html>
