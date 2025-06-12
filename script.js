@@ -1,7 +1,3 @@
-// Игровые переменные
-        let casinoBet = 100;
-        const slotSymbols = ['🍒', '🍋', '🍊', '⭐', '7️⃣', '💰'];
-        let isSpinning = false;
         let cosmicEnergy = 0;
         let totalEnergy = 0;
         let clickPower = 1;
